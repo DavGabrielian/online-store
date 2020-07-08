@@ -28,16 +28,6 @@ export default class Navbar extends Component {
               WATCHES
             </Link>
           </li>
-          <li className="nav-item ml-5">
-            <Link to="/cameras" className="nav-link">
-              CAMERAS
-            </Link>
-          </li>
-          <li className="nav-item ml-5">
-            <Link to="/computers" className="nav-link">
-              COMPUTERS
-            </Link>
-          </li>
         </ul>
         <Link to="/cart" className="ml-auto">
           <ButtonContainer>

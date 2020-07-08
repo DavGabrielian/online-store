@@ -1,11 +1,20 @@
 import React, { Component } from 'react'
+import Title from "./Title";
 
 export default class Phone extends Component {
+    state={
+        phones:[]
+    }
     render() {
         return (
-            <div>
-                <h2>hello from Phone</h2>
+            <React.Fragment>
+            <div className="py-5">
+              <div className="container">
+                <Title name="our" title="phones"  />
+                <div className="row"/>
+              </div>
             </div>
+          </React.Fragment>
         )
     }
 }

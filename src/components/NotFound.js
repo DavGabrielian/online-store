@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Camera extends Component {
+export default class NotFound extends Component {
     render() {
         return (
             <div>
-                <h3>chello from camera</h3>
+                <h1>page not found</h1>
             </div>
         )
     }
