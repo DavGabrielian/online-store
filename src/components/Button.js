@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export  const ButtonContainer = styled.button`
   font-size: 1.4rem;
+  letter-spacing: 0.05rem;
   background: transparent;
   border: 0.2rem solid var(--lightBlue);
   color: var(--lightBlue);

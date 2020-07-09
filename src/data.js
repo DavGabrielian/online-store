@@ -208,7 +208,7 @@ export const storeTablets = [
     total: 0,
   },
 ];
-export const storeWatchs = [
+export const storeWatches = [
   {
     id: 1,
     title: "iWatch",
