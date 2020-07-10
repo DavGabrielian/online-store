@@ -6,7 +6,6 @@ import { ProductWrapper } from "./ProductWrapper";
 
 export default class Tablets extends Component {
   render() {
-    const { id, title, img, price, inCart } = this.props;
 
     return (
       <React.Fragment>
@@ -21,11 +20,11 @@ export default class Tablets extends Component {
                       <ProductWrapper
                         key={tablet.id}
                         product={tablet}
-                        className="col-9 mx-auto col-md-6 col-lg-3 my-3"
+                        className="col-6 mx-auto col-md-6 col-lg-3 my-3"
                       >
-                        <div className="card">
+                        <div className="card h-100">
                           <div
-                            className="img-container p-5"
+                            className="img-container p-5 h-100"
                             onClick={() => console.log("clicked")}
                           >
                             <Link to="/details">
@@ -42,7 +41,7 @@ export default class Tablets extends Component {
                                 console.log("added");
                               }}
                             >
-                              {inCart ? (
+                              {tablet.inCart ? (
                                 <p className="text-capitalize mb-0" disabled>
                                   in cart
                                 </p>
@@ -52,7 +51,7 @@ export default class Tablets extends Component {
                             </button>
                           </div>
                           {/*  footer */}
-                          <div className="card-footer d-flex justify-content-between">
+                          <div className="card-footer d-flex justify-content-between ">
                             <p className="align-self-ceter mb-0">
                               {tablet.title}
                             </p>

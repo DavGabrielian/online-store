@@ -6,7 +6,6 @@ import { ProductWrapper } from "./ProductWrapper";
 
 export default class Phone extends Component {
   render() {
-    const { id, title, price, inCart } = this.props;
     return (
       <React.Fragment>
         <div className="py-5">
@@ -20,7 +19,7 @@ export default class Phone extends Component {
                       <ProductWrapper
                         key={phone.id}
                         product={phone}
-                        className="col-9 mx-auto col-md-6 col-lg-3 my-3"
+                        className="col-6 mx-auto col-md-6 col-lg-3 my-3"
                       >
                         <div className="card">
                           <div
@@ -55,7 +54,7 @@ export default class Phone extends Component {
                           <div className="card-footer d-flex justify-content-between">
                             <p className="align-self-ceter mb-0">
                               {phone.title}
-                            </p>
+                            </p> 
                             <h5 className="text-blue font-italic mb-0">
                               <span className="mt-1"> $</span>
                               {phone.price}

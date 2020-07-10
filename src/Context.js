@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { storePhones, detailPhones, storeTablets, storeWatches } from "./Data";
+import { storePhones, storeTablets, storeWatches } from "./Data";
 const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
@@ -7,7 +7,6 @@ class ProductProvider extends Component {
     phone: storePhones,
     tablet: storeTablets,
     watch:storeWatches,
-    detailProduct: detailPhones,
   };
 
   handleDetail = () => {

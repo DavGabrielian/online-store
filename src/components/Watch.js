@@ -6,7 +6,6 @@ import { ProductWrapper } from "./ProductWrapper";
 
 export default class Watch extends Component {
   render() {
-    const { id, title, img, price, inCart } = this.props;
 
     return (
       <React.Fragment>
@@ -21,11 +20,11 @@ export default class Watch extends Component {
                       <ProductWrapper
                         key={watch.id}
                         product={watch}
-                        className="col-9 mx-auto col-md-6 col-lg-3 my-3"
+                        className="col-6 mx-auto col-md-6 col-lg-3 my-3"
                       >
-                        <div className="card">
+                        <div className="card h-100">
                           <div
-                            className="img-container p-5"
+                            className="img-container p-5 h-100"
                             onClick={() => console.log("clicked")}
                           >
                             <Link to="/details">
@@ -37,12 +36,12 @@ export default class Watch extends Component {
                             </Link>
                             <button
                               className="cart-btn"
-                              disabled={inCart ? true : false}
+                              disabled={watch.inCart ? true : false}
                               onClick={() => {
                                 console.log("added");
                               }}
                             >
-                              {inCart ? (
+                              {watch.inCart ? (
                                 <p className="text-capitalize mb-0" disabled>
                                   in cart
                                 </p>
