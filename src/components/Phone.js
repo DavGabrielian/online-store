@@ -3,6 +3,7 @@ import Title from "./Title";
 import { ProductConsumer } from "../Context";
 import { Link } from "react-router-dom";
 import { ProductWrapper } from "./ProductWrapper";
+import PropTypes from 'prop-types'
 
 export default class Phone extends Component {
   render() {
@@ -72,4 +73,14 @@ export default class Phone extends Component {
       </React.Fragment>
     );
   }
+}
+
+Phone.propTypes={
+  product:PropTypes.shape({
+    idP:PropTypes.number,
+    img:PropTypes.string,
+    title:PropTypes.string,
+    price:PropTypes.number,
+    inCart:PropTypes.bool
+  }).isRequired
 }

@@ -34,7 +34,7 @@ export const ProductWrapper = styled.div`
   }
 
   .img-container:hover .card-img-top {
-    transform: scale(1.25);
+    transform: scale(1.2);
   }
 
   .cart-btn {
