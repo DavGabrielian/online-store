@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { storePhones, storeTablets, storeWatches } from "./Data";
+import { storePhones, storeTablets, storeWatches,detailProduct } from "./Data";
 const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
@@ -7,6 +7,7 @@ class ProductProvider extends Component {
     phone: storePhones,
     tablet: storeTablets,
     watch:storeWatches,
+    detailProduct: detailProduct,
   };
 
   handleDetail = () => {
@@ -15,7 +16,7 @@ class ProductProvider extends Component {
 
   addToCart = () => {
     console.log("hello cart");
-  };
+  };z
   render() {
     return (
       <ProductContext.Provider

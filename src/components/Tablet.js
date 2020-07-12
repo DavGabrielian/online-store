@@ -76,7 +76,7 @@ export default class Tablet extends Component {
 }
 
 Tablet.propTypes={
-  product:PropTypes.shape({
+  tablet:PropTypes.shape({
     idP:PropTypes.number,
     img:PropTypes.string,
     title:PropTypes.string,

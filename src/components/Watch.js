@@ -76,7 +76,7 @@ export default class Watch extends Component {
 }
 
 Watch.propTypes={
-  product:PropTypes.shape({
+  watch:PropTypes.shape({
     idP:PropTypes.number,
     img:PropTypes.string,
     title:PropTypes.string,

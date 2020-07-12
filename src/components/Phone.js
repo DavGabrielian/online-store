@@ -16,6 +16,7 @@ export default class Phone extends Component {
               <ProductConsumer>
                 {(value) => {
                   return value.phone.map((phone) => {
+
                     return (
                       <ProductWrapper
                         key={phone.id}
@@ -76,7 +77,7 @@ export default class Phone extends Component {
 }
 
 Phone.propTypes={
-  product:PropTypes.shape({
+  phone:PropTypes.shape({
     idP:PropTypes.number,
     img:PropTypes.string,
     title:PropTypes.string,
