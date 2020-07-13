@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { storePhones, storeTablets, storeWatches,detailProduct } from "./Data";
+import { storePhones, storeTablets, storeWatches, detailProduct } from "./Data";
 const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
   state = {
     phone: storePhones,
     tablet: storeTablets,
-    watch:storeWatches,
+    watch: storeWatches,
     detailProduct: detailProduct,
   };
 
@@ -14,9 +14,10 @@ class ProductProvider extends Component {
     console.log("hello detail");
   };
 
-  addToCart = () => {
-    console.log("hello cart");
-  };z
+  addToCart = (id) => {
+    console.log(`hello cart. id is ${id}`);
+  };
+
   render() {
     return (
       <ProductContext.Provider

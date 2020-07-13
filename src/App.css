@@ -3,7 +3,8 @@
   --lightBlue: #0077ff;
   --mainWhite: #e6e6e6;
   --mainDark: #232528;
-  --mainYellow: #ffa400;
+  --mainGreen: #42da06ee;
+  --mainRed: #ca2507ee;
 }
 body {
   font-family: "Oswald", cursive !important;

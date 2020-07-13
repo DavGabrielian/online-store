@@ -8,6 +8,7 @@ import Watch from "./components/Watch";
 import Details from "./components/Details";
 import Cart from "./components/Cart";
 import NotFound from "./components/NotFound";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 

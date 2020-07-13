@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import { ProductConsumer } from "../Context";
-import { Link } from "react-router-dom";
 import { ButtonContainer } from "./Button";
 
 export default class Details extends Component {
+  constructor(props) {
+    super(props);
+    this.handleBack = this.handleBack.bind(this);
+  }
+  handleBack() {
+    this.props.history.goBack();
+  }
   render() {
     return (
       <ProductConsumer>
@@ -11,7 +17,6 @@ export default class Details extends Component {
           const {
             id,
             company,
-            img,
             info,
             price,
             title,
@@ -49,12 +54,30 @@ export default class Details extends Component {
                   <p className="text-muted lead">{info}</p>
                   {/* buttons */}
                   <div>
-                    <Link to="/">
-                      <ButtonContainer>back to products</ButtonContainer>
-                    </Link>
-                    <Link to="/cart">
-                      <ButtonContainer>add to cart</ButtonContainer>
-                    </Link>
+                    <ButtonContainer
+                      style={{
+                        borderColor: "var(--mainRed)",
+                        background: "var(--mainRed)",
+                        color: "var(--mainWhite)",
+                      }}
+                      onClick={this.handleBack}
+                    >
+                      previous page
+                    </ButtonContainer>
+                    <ButtonContainer
+                      cart
+                      style={{
+                        borderColor: "var(--mainGreen)",
+                        background: "var(--mainGreen)",
+                        color: "var(--mainWhite)",
+                      }}
+                      disabled={inCart ? true : false}
+                      onClick={() => {
+                        value.addToCart(id);
+                      }}
+                    >
+                      {inCart ? "inCart" : "add to cart"}
+                    </ButtonContainer>
                   </div>
                 </div>
               </div>
