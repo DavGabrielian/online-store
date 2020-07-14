@@ -10,8 +10,38 @@ class ProductProvider extends Component {
     detailProduct: detailProduct,
   };
 
-  handleDetail = () => {
-    console.log("hello detail");
+  getPhone = (id) => {
+    const product = this.state.phone.find((item) => item.id === id);
+    return product;
+  };
+  getTablet = (id) => {
+    const product = this.state.tablet.find((item) => item.id === id);
+    return product;
+  };
+  getWatch = (id) => {
+    const product = this.state.watch.find((item) => item.id === id);
+    return product;
+  };
+
+  handlePhoneDetail = (id) => {
+    const product = this.getPhone(id);
+    this.setState(() => {
+      return { detailProduct: product };
+    });
+  };
+  handleTabletDetail = (id) => {
+    const product = this.getTablet(id);
+    this.setState(() => {
+      return { detailProduct: product };
+    });
+  };
+
+
+  handleWatchDetail = (id) => {
+    const product = this.getWatch(id);
+    this.setState(() => {
+      return { detailProduct: product };
+    });
   };
 
   addToCart = (id) => {
@@ -23,7 +53,9 @@ class ProductProvider extends Component {
       <ProductContext.Provider
         value={{
           ...this.state,
-          handleDetail: this.handleDetail,
+          handlePhoneDetail: this.handlePhoneDetail,
+          handleTabletDetail: this.handleTabletDetail,
+          handleWatchDetail: this.handleWatchDetail,
           addToCart: this.addToCart,
         }}
       >

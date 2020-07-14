@@ -1,6 +1,7 @@
 export const storePhones = [
   {
     id: 1,
+    name: "phone",
     title: "Google Pixel - Black",
     img: "img/phone-1.png",
     price: 10,
@@ -13,6 +14,8 @@ export const storePhones = [
   },
   {
     id: 2,
+    name: "phone",
+
     title: "Samsung S7",
     img: "img/phone-2.png",
     price: 16,
@@ -25,6 +28,8 @@ export const storePhones = [
   },
   {
     id: 3,
+    name: "phone",
+
     title: "HTC 10 - Black",
     img: "img/phone-3.png",
     price: 8,
@@ -37,6 +42,8 @@ export const storePhones = [
   },
   {
     id: 4,
+    name: "phone",
+
     title: "HTC 10 - White",
     img: "img/phone-4.png",
     price: 18,
@@ -49,6 +56,8 @@ export const storePhones = [
   },
   {
     id: 5,
+    name: "phone",
+
     title: "HTC Desire 626s",
     img: "img/phone-5.png",
     price: 24,
@@ -61,6 +70,8 @@ export const storePhones = [
   },
   {
     id: 6,
+    name: "phone",
+
     title: "Vintage Iphone",
     img: "img/phone-6.png",
     price: 17,
@@ -73,6 +84,8 @@ export const storePhones = [
   },
   {
     id: 7,
+    name: "phone",
+
     title: "Iphone 7",
     img: "img/phone-7.png",
     price: 30,
@@ -85,6 +98,8 @@ export const storePhones = [
   },
   {
     id: 8,
+    name: "phone",
+
     title: "Smashed Iphone",
     img: "img/phone-8.png",
     price: 2,
@@ -97,23 +112,26 @@ export const storePhones = [
   },
 ];
 
-export const detailProduct = 
-  {
-    id: 1,
-    title: "Google Pixel - Black",
-    img: "img/phone-1.png",
-    price: 10,
-    company: "GOOGLE",
-    info:
-      "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
-    inCart: false,
-    count: 0,
-    total: 0,
-  }
+export const detailProduct = {
+  id: 1,
+  name: "phone",
+
+  title: "Google Pixel - Black",
+  img: "img/phone-1.png",
+  price: 10,
+  company: "GOOGLE",
+  info:
+    "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
+  inCart: false,
+  count: 0,
+  total: 0,
+};
 
 export const storeTablets = [
   {
     id: 1,
+    name: "tablet",
+
     title: "iPad Air",
     img: "img/tablet-1.png",
     price: 10,
@@ -126,6 +144,8 @@ export const storeTablets = [
   },
   {
     id: 2,
+    name: "tablet",
+
     title: "iPad mini",
     img: "img/tablet-2.png",
     price: 16,
@@ -138,6 +158,8 @@ export const storeTablets = [
   },
   {
     id: 3,
+    name: "tablet",
+
     title: "iPad",
     img: "img/tablet-3.png",
     price: 8,
@@ -150,6 +172,8 @@ export const storeTablets = [
   },
   {
     id: 4,
+    name: "tablet",
+
     title: "iPad 2",
     img: "img/tablet-4.png",
     price: 18,
@@ -162,6 +186,8 @@ export const storeTablets = [
   },
   {
     id: 5,
+    name: "tablet",
+
     title: "iPad Air mini",
     img: "img/tablet-5.png",
     price: 24,
@@ -174,6 +200,8 @@ export const storeTablets = [
   },
   {
     id: 6,
+    name: "tablet",
+
     title: "Windows Tablet",
     img: "img/tablet-6.png",
     price: 17,
@@ -186,6 +214,8 @@ export const storeTablets = [
   },
   {
     id: 7,
+    name: "tablet",
+
     title: "Windows Tablet",
     img: "img/tablet-7.png",
     price: 30,
@@ -198,6 +228,8 @@ export const storeTablets = [
   },
   {
     id: 8,
+    name: "tablet",
+
     title: "Samsung Tablet",
     img: "img/tablet-8.png",
     price: 2,
@@ -212,6 +244,8 @@ export const storeTablets = [
 export const storeWatches = [
   {
     id: 1,
+    name: "watch",
+
     title: "iWatch",
     img: "img/watch-1.png",
     price: 10,
@@ -224,6 +258,7 @@ export const storeWatches = [
   },
   {
     id: 2,
+    name: "watch",
     title: "SmartWatch",
     img: "img/watch-2.png",
     price: 16,
@@ -236,6 +271,7 @@ export const storeWatches = [
   },
   {
     id: 3,
+    name: "watch",
     title: "SmartWatch",
     img: "img/watch-3.png",
     price: 8,
@@ -248,6 +284,7 @@ export const storeWatches = [
   },
   {
     id: 4,
+    name: "watch",
     title: "iWatch",
     img: "img/watch-4.png",
     price: 18,
@@ -260,6 +297,7 @@ export const storeWatches = [
   },
   {
     id: 5,
+    name: "watch",
     title: "SmartWatch",
     img: "img/watch-5.png",
     price: 24,
@@ -272,6 +310,7 @@ export const storeWatches = [
   },
   {
     id: 6,
+    name: "watch",
     title: "SmartWatch",
     img: "img/watch-6.png",
     price: 17,
@@ -284,6 +323,7 @@ export const storeWatches = [
   },
   {
     id: 7,
+    name: "watch",
     title: "SmartWatch",
     img: "img/watch-7.png",
     price: 30,
@@ -296,6 +336,7 @@ export const storeWatches = [
   },
   {
     id: 8,
+    name: "watch",
     title: "SmartWatch",
     img: "img/watch-8.png",
     price: 2,

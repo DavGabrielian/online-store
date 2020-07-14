@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import { Footer, FooterSection, FooterLinkList } from "react-mdl";
+import { Footer, FooterSection } from "react-mdl";
 import Title from "./Title";
-import styled from "styled-components";
 import home from "../img/home.png";
+import {BackCss} from './BackCss'
 
 export default class HomePage extends Component {
   render() {
     return (
       <React.Fragment>
-        <HomePageCss>
+        <BackCss>
           <section id="main">
             <div className="main-text">
               <Title title="electron" />
@@ -21,7 +21,7 @@ export default class HomePage extends Component {
             </div>
             <img className="home" alt="home" src={home} />
           </section>
-        </HomePageCss>
+        </BackCss>
         <Footer size="mini">
           <FooterSection>
               <div>
@@ -36,21 +36,3 @@ export default class HomePage extends Component {
   }
 }
 
-export const HomePageCss = styled.section`
-  #main {
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: 0fr 2fr;
-  }
-
-  #main .main-text {
-    margin: 60px 150px;
-    font-weight: 700;
-    line-height: 1.5;
-  }
-
-  #main .home {
-    left: 45rem;
-    position: fixed;
-  }
-`;

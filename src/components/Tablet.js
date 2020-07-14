@@ -3,11 +3,10 @@ import Title from "./Title";
 import { ProductConsumer } from "../Context";
 import { Link } from "react-router-dom";
 import { ProductWrapper } from "./ProductWrapper";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 export default class Tablet extends Component {
   render() {
-
     return (
       <React.Fragment>
         <div className="py-5">
@@ -24,33 +23,40 @@ export default class Tablet extends Component {
                         className="col-6 mx-auto col-md-6 col-lg-3 my-3"
                       >
                         <div className="card h-100">
-                          <div
-                            className="img-container p-5 h-100"
-                            onClick={() => console.log("clicked")}
-                          >
-                            <Link to="/details">
-                              <img
-                                alt="tablet"
-                                className="card-img-top"
-                                src={require(`../img/tablet-${tablet.id}.png`)}
-                              />
-                            </Link>
-                            <button
-                              className="cart-btn"
-                              disabled={tablet.inCart ? true : false}
-                              onClick={() => {
-                                console.log("added");
-                              }}
-                            >
-                              {tablet.inCart ? (
-                                <p className="text-capitalize mb-0" disabled>
-                                  in cart
-                                </p>
-                              ) : (
-                                <i className="fas fa-cart-plus" />
-                              )}
-                            </button>
-                          </div>
+                          <ProductConsumer>
+                            {(value) => (
+                              <div
+                                className="img-container p-5 h-100"
+                                onClick={() => value.handleTabletDetail(tablet.id)}
+                              >
+                                <Link to="/details">
+                                  <img
+                                    alt="tablet"
+                                    className="card-img-top"
+                                    src={require(`../img/${tablet.name}-${tablet.id}.png`)}
+                                  />
+                                </Link>
+                                <button
+                                  className="cart-btn"
+                                  disabled={tablet.inCart ? true : false}
+                                  onClick={() => {
+                                    value.addToCart(tablet.id);
+                                  }}
+                                >
+                                  {tablet.inCart ? (
+                                    <p
+                                      className="text-capitalize mb-0"
+                                      disabled
+                                    >
+                                      in cart
+                                    </p>
+                                  ) : (
+                                    <i className="fas fa-cart-plus" />
+                                  )}
+                                </button>
+                              </div>
+                            )}
+                          </ProductConsumer>
                           {/*  footer */}
                           <div className="card-footer d-flex justify-content-between ">
                             <p className="align-self-ceter mb-0">
@@ -75,12 +81,12 @@ export default class Tablet extends Component {
   }
 }
 
-Tablet.propTypes={
-  tablet:PropTypes.shape({
-    idP:PropTypes.number,
-    img:PropTypes.string,
-    title:PropTypes.string,
-    price:PropTypes.number,
-    inCart:PropTypes.bool
-  }).isRequired
-}
+Tablet.propTypes = {
+  tablet: PropTypes.shape({
+    idP: PropTypes.number,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    inCart: PropTypes.bool,
+  }).isRequired,
+};

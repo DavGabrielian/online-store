@@ -16,6 +16,7 @@ export default class Details extends Component {
         {(value) => {
           const {
             id,
+            name,
             company,
             info,
             price,
@@ -34,7 +35,7 @@ export default class Details extends Component {
               <div className="row">
                 <div className="col-10 mx-auto col-md-6 my-3">
                   <img
-                    src={require(`../img/phone-${id}.png`)}
+                    src={require(`../img/${name}-${id}.png`)}
                     className="img-fluid"
                     alt="product"
                   />
