@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ButtonContainer = styled.button`
   font-size: 1.4rem;
   letter-spacing: 0.05rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   background: transparent;
   border: 0.2rem solid var(--lightBlue);
   border-color:var(--lightBlue);

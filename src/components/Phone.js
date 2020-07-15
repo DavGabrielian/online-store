@@ -13,7 +13,7 @@ export default class Phone extends Component {
           <div className="container">
             <Title name="our" title="phones" />
             <div className="row">
-              <ProductConsumer>
+              <ProductConsumer  {...this.props}>
                 {(value) => {
                   return value.phone.map((phone) => {
                     return (
@@ -27,7 +27,9 @@ export default class Phone extends Component {
                             {(value) => (
                               <div
                                 className="img-container p-5"
-                                onClick={() => value.handlePhoneDetail(phone.id)}
+                                onClick={() =>
+                                  value.handlePhoneDetail(phone.id)
+                                }
                               >
                                 <Link to="/details">
                                   <img
@@ -42,7 +44,8 @@ export default class Phone extends Component {
                                   disabled={phone.inCart ? true : false}
                                   onClick={() => {
                                     value.addToCart(phone.id);
-                                  }}
+                                  }
+                                }
                                 >
                                   {phone.inCart ? (
                                     <p
@@ -52,10 +55,14 @@ export default class Phone extends Component {
                                       in cart
                                     </p>
                                   ) : (
-                                    <i className="fas fa-cart-plus" />
-                                  )}
+                                    <p
+                                      className="text-capitalize mb-0"
+                                      disabled
+                                    >
+                                      add to cart
+                                    </p>                                  )}
                                 </button>
-                              </div>
+                              </div> 
                             )}
                           </ProductConsumer>
 
