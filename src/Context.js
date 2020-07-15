@@ -8,6 +8,7 @@ class ProductProvider extends Component {
     tablet: storeTablets,
     watch: storeWatches,
     detailProduct: detailProduct,
+    cart: [],
   };
 
   getPhone = (id) => {
@@ -36,7 +37,6 @@ class ProductProvider extends Component {
     });
   };
 
-
   handleWatchDetail = (id) => {
     const product = this.getWatch(id);
     this.setState(() => {
@@ -45,7 +45,21 @@ class ProductProvider extends Component {
   };
 
   addToCart = (id) => {
-    console.log(`hello cart. id is ${id}`);
+    let tempProducts = [...this.state.phone];
+    const index = tempProducts.indexOf(this.getPhone(id));
+    const product = tempProducts[index];
+    product.inCart = true;
+    product.count = 1;
+    const price = product.price;
+    product.total = price;
+    this.setState(
+      () => {
+        return { phone: tempProducts, cart: [...this.state.cart, product] };
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   };
 
   render() {

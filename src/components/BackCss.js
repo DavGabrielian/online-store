@@ -7,13 +7,14 @@ export const BackCss = styled.section`
   }
 
   #main .main-text {
-    margin: 20px 150px;
+    margin: 40px 220px;
     font-weight: 600;
     line-height: 1.5;
   }
 
   #main .home {
-    left: 28rem;
+    width:40rem;
+    left: 47rem;
     position: fixed;
   }
 `;
