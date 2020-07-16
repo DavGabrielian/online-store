@@ -9,7 +9,7 @@ class ProductProvider extends Component {
     watch: storeWatches,
     detailProduct: detailProduct,
     cart: [],
-    modalOpen: true,
+    modalOpen: false,
     modalProduct: detailProduct,
   };
 
@@ -99,7 +99,7 @@ class ProductProvider extends Component {
   };
 
   openModal = (id) => {
-    const product = this.getItem(id);
+    const product = this.getPhone(id);
     this.setState(() => {
       return { modalProduct: product, modalOpen: true };
     });
@@ -122,6 +122,8 @@ class ProductProvider extends Component {
           addPhoneToCart: this.addPhoneToCart,
           addTabletToCart: this.addTabletToCart,
           addWatchToCart: this.addWatchToCart,
+          openModal: this.openModal,
+          closeModal: this.closeModal,
         }}
       >
         {this.props.children}

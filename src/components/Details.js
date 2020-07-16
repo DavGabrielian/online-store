@@ -66,7 +66,7 @@ export default class Details extends Component {
                       previous page
                     </ButtonContainer>
                     <ButtonContainer
-                      cart
+                      
                       style={{
                         borderColor: "var(--mainGreen)",
                         background: "var(--mainGreen)",
@@ -77,6 +77,8 @@ export default class Details extends Component {
                         value.addPhoneToCart(id);
                         value.addTabletToCart(id);
                         value.addWatchToCart(id);
+                        value.openModal(id)
+
                       }}
                     >
                       {inCart ? "in Cart" : "add to cart"}

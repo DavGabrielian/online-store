@@ -44,6 +44,7 @@ export default class Phone extends Component {
                                   disabled={phone.inCart ? true : false}
                                   onClick={() => {
                                     value.addPhoneToCart(phone.id);
+                                    value.openModal(phone.id)
                                   }}
                                 >
                                   {phone.inCart ? (

@@ -43,6 +43,7 @@ export default class Watch extends Component {
                                   disabled={watch.inCart ? true : false}
                                   onClick={() => {
                                     value.addWatchToCart(watch.id);
+                                    value.openModal(watch.id);
                                   }}
                                 >
                                   {watch.inCart ? (

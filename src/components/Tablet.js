@@ -43,6 +43,7 @@ export default class Tablet extends Component {
                                   disabled={tablet.inCart ? true : false}
                                   onClick={() => {
                                     value.addTabletToCart(tablet.id);
+                                    value.openModal(tablet.id);
                                   }}
                                 >
                                   {tablet.inCart ? (
