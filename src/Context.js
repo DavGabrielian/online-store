@@ -8,9 +8,12 @@ class ProductProvider extends Component {
     tablet: storeTablets,
     watch: storeWatches,
     detailProduct: detailProduct,
-    cart: [],
+    cart: storePhones,
     modalOpen: false,
     modalProduct: detailProduct,
+    cartSubTotal: 0,
+    cartTax: 0,
+    cartTotal: 0,
   };
 
   getPhone = (id) => {
@@ -111,6 +114,21 @@ class ProductProvider extends Component {
     });
   };
 
+  increment = (id) => {
+    console.log("increment method");
+  };
+
+  decrement = (id) => {
+    console.log("decrement method");
+  };
+
+  removeItem = (id) => {
+    console.log("remove method");
+  };
+  clearCart = (id) => {
+    console.log("clear method");
+  };
+
   render() {
     return (
       <ProductContext.Provider
@@ -124,6 +142,10 @@ class ProductProvider extends Component {
           addWatchToCart: this.addWatchToCart,
           openModal: this.openModal,
           closeModal: this.closeModal,
+          increment: this.increment,
+          decrement: this.decrement,
+          removeItem: this.removeItem,
+          clearCart: this.clearCart,
         }}
       >
         {this.props.children}
