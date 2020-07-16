@@ -27,7 +27,9 @@ export default class Watch extends Component {
                             {(value) => (
                               <div
                                 className="img-container p-5 h-100"
-                                onClick={() => value.handleWatchDetail(watch.id)}
+                                onClick={() =>
+                                  value.handleWatchDetail(watch.id)
+                                }
                               >
                                 <Link to="/details">
                                   <img
@@ -40,7 +42,7 @@ export default class Watch extends Component {
                                   className="cart-btn"
                                   disabled={watch.inCart ? true : false}
                                   onClick={() => {
-                                    value.addToCart(watch.id);
+                                    value.addWatchToCart(watch.id);
                                   }}
                                 >
                                   {watch.inCart ? (
@@ -51,7 +53,12 @@ export default class Watch extends Component {
                                       in cart
                                     </p>
                                   ) : (
-                                    <i className="fas fa-cart-plus" />
+                                    <p
+                                      className="text-capitalize mb-0"
+                                      disabled
+                                    >
+                                      add to cart
+                                    </p>
                                   )}
                                 </button>
                               </div>

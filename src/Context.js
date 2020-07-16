@@ -46,7 +46,7 @@ class ProductProvider extends Component {
     });
   };
 
-  addToCart = (id) => {
+  addPhoneToCart = (id) => {
     let tempProducts = [...this.state.phone];
     const index = tempProducts.indexOf(this.getPhone(id));
     const product = tempProducts[index];
@@ -63,19 +63,53 @@ class ProductProvider extends Component {
       }
     );
   };
+  addTabletToCart = (id) => {
+    let tempProducts = [...this.state.tablet];
+    const index = tempProducts.indexOf(this.getTablet(id));
+    const product = tempProducts[index];
+    product.inCart = true;
+    product.count = 1;
+    const price = product.price;
+    product.total = price;
+    this.setState(
+      () => {
+        return { tablet: tempProducts, cart: [...this.state.cart, product] };
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+  };
+  addWatchToCart = (id) => {
+    let tempProducts = [...this.state.watch];
+    const index = tempProducts.indexOf(this.getWatch(id));
+    const product = tempProducts[index];
+    product.inCart = true;
+    product.count = 1;
+    const price = product.price;
+    product.total = price;
+    this.setState(
+      () => {
+        return { watch: tempProducts, cart: [...this.state.cart, product] };
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+  };
 
-openModal = id => {
-  const product = this.getItem(id)
-  this.setState(()=>{
-    return {modalProduct:product,modalOpen:true}
-  })
-}
+  openModal = (id) => {
+    const product = this.getItem(id);
+    this.setState(() => {
+      return { modalProduct: product, modalOpen: true };
+    });
+  };
 
-closeModal = () => {
-  this.setState(()=>{
-    return {modalOpen:false}
-  })
-}
+  closeModal = () => {
+    this.setState(() => {
+      return { modalOpen: false };
+    });
+  };
 
   render() {
     return (
@@ -85,7 +119,9 @@ closeModal = () => {
           handlePhoneDetail: this.handlePhoneDetail,
           handleTabletDetail: this.handleTabletDetail,
           handleWatchDetail: this.handleWatchDetail,
-          addToCart: this.addToCart,
+          addPhoneToCart: this.addPhoneToCart,
+          addTabletToCart: this.addTabletToCart,
+          addWatchToCart: this.addWatchToCart,
         }}
       >
         {this.props.children}

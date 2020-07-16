@@ -27,7 +27,9 @@ export default class Tablet extends Component {
                             {(value) => (
                               <div
                                 className="img-container p-5 h-100"
-                                onClick={() => value.handleTabletDetail(tablet.id)}
+                                onClick={() =>
+                                  value.handleTabletDetail(tablet.id)
+                                }
                               >
                                 <Link to="/details">
                                   <img
@@ -40,7 +42,7 @@ export default class Tablet extends Component {
                                   className="cart-btn"
                                   disabled={tablet.inCart ? true : false}
                                   onClick={() => {
-                                    value.addToCart(tablet.id);
+                                    value.addTabletToCart(tablet.id);
                                   }}
                                 >
                                   {tablet.inCart ? (
@@ -51,7 +53,12 @@ export default class Tablet extends Component {
                                       in cart
                                     </p>
                                   ) : (
-                                    <i className="fas fa-cart-plus" />
+                                    <p
+                                      className="text-capitalize mb-0"
+                                      disabled
+                                    >
+                                      add to cart
+                                    </p>
                                   )}
                                 </button>
                               </div>

@@ -13,7 +13,7 @@ export default class Phone extends Component {
           <div className="container">
             <Title name="our" title="phones" />
             <div className="row">
-              <ProductConsumer  {...this.props}>
+              <ProductConsumer {...this.props}>
                 {(value) => {
                   return value.phone.map((phone) => {
                     return (
@@ -43,9 +43,8 @@ export default class Phone extends Component {
                                   className="cart-btn"
                                   disabled={phone.inCart ? true : false}
                                   onClick={() => {
-                                    value.addToCart(phone.id);
-                                  }
-                                }
+                                    value.addPhoneToCart(phone.id);
+                                  }}
                                 >
                                   {phone.inCart ? (
                                     <p
@@ -60,9 +59,10 @@ export default class Phone extends Component {
                                       disabled
                                     >
                                       add to cart
-                                    </p>                                  )}
+                                    </p>
+                                  )}
                                 </button>
-                              </div> 
+                              </div>
                             )}
                           </ProductConsumer>
 

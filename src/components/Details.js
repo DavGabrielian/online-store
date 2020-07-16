@@ -74,7 +74,9 @@ export default class Details extends Component {
                       }}
                       disabled={inCart ? true : false}
                       onClick={() => {
-                        value.addToCart(id);
+                        value.addPhoneToCart(id);
+                        value.addTabletToCart(id);
+                        value.addWatchToCart(id);
                       }}
                     >
                       {inCart ? "in Cart" : "add to cart"}
