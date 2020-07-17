@@ -8,11 +8,9 @@ class ProductProvider extends Component {
     tablet: storeTablets,
     watch: storeWatches,
     detailProduct: detailProduct,
-    cart: storeTablets,
+    cart: [],
     modalOpen: false,
     modalProduct: detailProduct,
-    cartSubTotal: 0,
-    cartTax: 0,
     cartTotal: 0,
   };
 
@@ -62,7 +60,7 @@ class ProductProvider extends Component {
         return { phone: tempProducts, cart: [...this.state.cart, product] };
       },
       () => {
-        console.log(this.state);
+        this.addTotal();
       }
     );
   };
@@ -125,8 +123,27 @@ class ProductProvider extends Component {
   removeItem = (id) => {
     console.log("remove method");
   };
+
+  // fix the bug here
   clearCart = (id) => {
-    console.log("clear method");
+    this.setState(()=>{
+      return {
+        cart:[]
+      }
+    },()=>{
+      this.addTotal()
+    })
+  };
+
+  addTotal = () => {
+    let subTotal = 0;
+    this.state.cart.map((item) => (subTotal += item.total));
+    const total = subTotal;
+    this.setState(() => {
+      return {
+        cartTotal: total,
+      };
+    });
   };
 
   render() {

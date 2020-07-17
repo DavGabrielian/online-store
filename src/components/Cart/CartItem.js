@@ -5,8 +5,8 @@ export default function CartItem({ item, value }) {
   const { increment, decrement, removeItem } = value;
 
   return (
-    <div className="row my-2 text-capitalize text-center">
-      <div className="col-12 mx-auto col-lg-2">
+    <div className="row my-5 text-capitalize text-center">
+      <div className="col-10 my-2 mx-auto col-lg-2">
         <img
           src={require(`../../img/${name}-${id}.png`)}
           style={{ width: "7rem", height: "auto" }}
