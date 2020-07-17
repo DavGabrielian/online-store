@@ -101,6 +101,7 @@ class ProductProvider extends Component {
       }
     );
   };
+
   addTabletToCart = (id) => {
     let tempProducts = [...this.state.tablet];
     const index = tempProducts.indexOf(this.getTablet(id));
@@ -118,6 +119,7 @@ class ProductProvider extends Component {
       }
     );
   };
+
   addWatchToCart = (id) => {
     let tempProducts = [...this.state.watch];
     const index = tempProducts.indexOf(this.getWatch(id));
@@ -168,8 +170,64 @@ class ProductProvider extends Component {
     console.log("decrement method");
   };
 
+  // fix the bug HERE !!!
   removeItem = (id) => {
-    console.log("remove method");
+    let tempPhones = [...this.state.phone];
+    let tempTablets = [...this.state.tablet];
+    let tempWatches = [...this.state.watch];
+    let tempCart = [...this.state.cart];
+    tempCart = tempCart.filter((item) => item.id !== id);
+
+    const indexPhone = tempPhones.indexOf(this.getPhone(id));
+    let removedPhone = tempPhones[indexPhone];
+    removedPhone.inCart = false;
+    removedPhone.count = 0;
+    removedPhone.total = 0;
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+          phone: [...tempPhones],
+        };
+      },
+      () => {
+        this.addTotal();
+      }
+    );
+
+    const indexTablet = tempTablets.indexOf(this.getTablet(id));
+    let removedTablet = tempTablets[indexTablet];
+    removedTablet.inCart = false;
+    removedTablet.count = 0;
+    removedTablet.total = 0;
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+          tablet: [...tempTablets],
+        };
+      },
+      () => {
+        this.addTotal();
+      }
+    );
+
+    const indexWatch = tempWatches.indexOf(this.getWatch(id));
+    let removedWatch = tempWatches[indexWatch];
+    removedWatch.inCart = false;
+    removedWatch.count = 0;
+    removedWatch.total = 0;
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+          watch: [...tempWatches],
+        };
+      },
+      () => {
+        this.addTotal();
+      }
+    );
   };
 
   clearCart = () => {
