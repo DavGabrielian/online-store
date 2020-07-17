@@ -14,6 +14,43 @@ class ProductProvider extends Component {
     cartTotal: 0,
   };
 
+  componentDidMount() {
+    this.setPhones();
+    this.setTablets();
+    this.setWatches();
+  }
+
+  setPhones = () => {
+    let tempPhones = [];
+    storePhones.forEach((item) => {
+      const singleItem = { ...item };
+      tempPhones = [...tempPhones, singleItem];
+    });
+    this.setState(() => {
+      return { phone: tempPhones };
+    });
+  };
+  setTablets = () => {
+    let tempTablets = [];
+    storeTablets.forEach((item) => {
+      const singleItem = { ...item };
+      tempTablets = [...tempTablets, singleItem];
+    });
+    this.setState(() => {
+      return { tablet: tempTablets };
+    });
+  };
+  setWatches = () => {
+    let tempWatches = [];
+    storeWatches.forEach((item) => {
+      const singleItem = { ...item };
+      tempWatches = [...tempWatches, singleItem];
+    });
+    this.setState(() => {
+      return { watch: tempWatches };
+    });
+  };
+
   getPhone = (id) => {
     const product = this.state.phone.find((item) => item.id === id);
     return product;
@@ -112,6 +149,17 @@ class ProductProvider extends Component {
     });
   };
 
+  addTotal = () => {
+    let subTotal = 0;
+    this.state.cart.map((item) => (subTotal += item.total));
+    const total = subTotal;
+    this.setState(() => {
+      return {
+        cartTotal: total,
+      };
+    });
+  };
+
   increment = (id) => {
     console.log("increment method");
   };
@@ -124,26 +172,20 @@ class ProductProvider extends Component {
     console.log("remove method");
   };
 
-  // fix the bug here
-  clearCart = (id) => {
-    this.setState(()=>{
-      return {
-        cart:[]
+  clearCart = () => {
+    this.setState(
+      () => {
+        return {
+          cart: [],
+        };
+      },
+      () => {
+        this.addTotal();
+        this.setPhones();
+        this.setTablets();
+        this.setWatches();
       }
-    },()=>{
-      this.addTotal()
-    })
-  };
-
-  addTotal = () => {
-    let subTotal = 0;
-    this.state.cart.map((item) => (subTotal += item.total));
-    const total = subTotal;
-    this.setState(() => {
-      return {
-        cartTotal: total,
-      };
-    });
+    );
   };
 
   render() {
