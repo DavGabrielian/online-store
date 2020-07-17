@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Footer, FooterSection } from "react-mdl";
 import Title from "./Title";
 import home from "../img/home.png";
-import {BackCss} from './BackCss'
+import {BackCss} from './StyledComp/BackCss'
 
 export default class HomePage extends Component {
   render() {

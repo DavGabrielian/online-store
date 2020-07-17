@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { ButtonContainer } from "./Button";
+import { ButtonContainer } from "./StyledComp/Button";
 import logo from "../logo.svg";
-import styled from "styled-components";
+import {NavWrap} from './StyledComp/NavWrap'
 
 export default class Navbar extends Component {
   render() {
@@ -42,10 +42,4 @@ export default class Navbar extends Component {
   }
 }
 
-const NavWrap = styled.nav`
-  background: var(--mainBlue);
-  .nav-link {
-    color: var(--lightBlue) !important;
-    font-size: 1.5rem;
-  }
-`;
+

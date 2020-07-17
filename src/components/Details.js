@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ProductConsumer } from "../Context";
-import { ButtonContainer } from "./Button";
+import { ButtonContainer } from "./StyledComp/Button";
 
 export default class Details extends Component {
   constructor(props) {
@@ -66,7 +66,6 @@ export default class Details extends Component {
                       previous page
                     </ButtonContainer>
                     <ButtonContainer
-                      
                       style={{
                         borderColor: "var(--mainGreen)",
                         background: "var(--mainGreen)",
@@ -77,8 +76,7 @@ export default class Details extends Component {
                         value.addPhoneToCart(id);
                         value.addTabletToCart(id);
                         value.addWatchToCart(id);
-                        value.openModal(id)
-
+                        value.openModal(id);
                       }}
                     >
                       {inCart ? "in Cart" : "add to cart"}

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Title from "./Title";
 import { ProductConsumer } from "../Context";
 import { Link } from "react-router-dom";
-import { ProductWrapper } from "./ProductWrapper";
+import { ProductWrapper } from "./StyledComp/ProductWrapper";
 import PropTypes from "prop-types";
 
 export default class Watch extends Component {
