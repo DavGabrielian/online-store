@@ -11,7 +11,7 @@ export default class Modal extends Component {
         {(value) => {
           const { id, name } = value.detailProduct;
           const { modalOpen, closeModal } = value;
-          const { title, price } = value.modalProduct;
+          const { title, price } = value.detailProduct;
 
           if (!modalOpen) {
             return null;

@@ -11,6 +11,8 @@ class ProductProvider extends Component {
     cart: [],
     modalOpen: false,
     modalProduct: detailProduct,
+    cartSubTotal: 0,
+    cartDelivery: 0,
     cartTotal: 0,
   };
 
@@ -115,7 +117,7 @@ class ProductProvider extends Component {
         return { tablet: tempProducts, cart: [...this.state.cart, product] };
       },
       () => {
-        console.log(this.state);
+        this.addTotal();
       }
     );
   };
@@ -133,7 +135,7 @@ class ProductProvider extends Component {
         return { watch: tempProducts, cart: [...this.state.cart, product] };
       },
       () => {
-        console.log(this.state);
+        this.addTotal();
       }
     );
   };
@@ -154,9 +156,13 @@ class ProductProvider extends Component {
   addTotal = () => {
     let subTotal = 0;
     this.state.cart.map((item) => (subTotal += item.total));
-    const total = subTotal;
+    const tempDelivery = subTotal * 0.06;
+    const deliver = parseFloat(tempDelivery.toFixed(2));
+    const total = subTotal + deliver;
     this.setState(() => {
       return {
+        cartSubTotal: subTotal,
+        cartDelivery: deliver,
         cartTotal: total,
       };
     });
@@ -170,11 +176,11 @@ class ProductProvider extends Component {
     console.log("decrement method");
   };
 
-  // fix the bug HERE !!!
-  removeItem = (id) => {
+//  the bug was fixed,
+//  kinda ????
+
+  removePhone = (id) => {
     let tempPhones = [...this.state.phone];
-    let tempTablets = [...this.state.tablet];
-    let tempWatches = [...this.state.watch];
     let tempCart = [...this.state.cart];
     tempCart = tempCart.filter((item) => item.id !== id);
 
@@ -194,6 +200,11 @@ class ProductProvider extends Component {
         this.addTotal();
       }
     );
+  };
+  removeTablet = (id) => {
+    let tempTablets = [...this.state.tablet];
+    let tempCart = [...this.state.cart];
+    tempCart = tempCart.filter((item) => item.id !== id);
 
     const indexTablet = tempTablets.indexOf(this.getTablet(id));
     let removedTablet = tempTablets[indexTablet];
@@ -211,6 +222,11 @@ class ProductProvider extends Component {
         this.addTotal();
       }
     );
+  };
+  removeWatch = (id) => {
+    let tempWatches = [...this.state.watch];
+    let tempCart = [...this.state.cart];
+    tempCart = tempCart.filter((item) => item.id !== id);
 
     const indexWatch = tempWatches.indexOf(this.getWatch(id));
     let removedWatch = tempWatches[indexWatch];
@@ -221,6 +237,7 @@ class ProductProvider extends Component {
       () => {
         return {
           cart: [...tempCart],
+
           watch: [...tempWatches],
         };
       },
@@ -261,7 +278,9 @@ class ProductProvider extends Component {
           closeModal: this.closeModal,
           increment: this.increment,
           decrement: this.decrement,
-          removeItem: this.removeItem,
+          removePhone: this.removePhone,
+          removeTablet: this.removeTablet,
+          removeWatch: this.removeWatch,
           clearCart: this.clearCart,
         }}
       >
