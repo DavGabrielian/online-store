@@ -169,16 +169,50 @@ class ProductProvider extends Component {
   };
 
   increment = (id) => {
-    console.log("increment method");
+    let tempCart = [...this.state.cart];
+    const selectedProduct = tempCart.find((item) => item.id === id);
+    const index = tempCart.indexOf(selectedProduct);
+    const product = tempCart[index];
+
+    product.count = product.count + 1;
+    product.total = product.count * product.price;
+
+    this.setState(
+      () => {
+        return { cart: [...tempCart] };
+      },
+      () => {
+        this.addTotal();
+      }
+    );
   };
 
   decrement = (id) => {
-    console.log("decrement method");
+    let tempCart = [...this.state.cart];
+    const selectedProduct = tempCart.find((item) => item.id === id);
+    const index = tempCart.indexOf(selectedProduct);
+    const product = tempCart[index];
+
+    product.count = product.count - 1;
+
+    if (product.count <= 0) {
+      return null;
+    } else {
+      product.total = product.count * product.price;
+
+      this.setState(
+        () => {
+          return { cart: [...tempCart] };
+        },
+        () => {
+          this.addTotal();
+        }
+      );
+    }
   };
 
-//  the bug was fixed,
-//  kinda ????
-
+  //  the bug was fixed,
+  //  kinda ????
   removePhone = (id) => {
     let tempPhones = [...this.state.phone];
     let tempCart = [...this.state.cart];
