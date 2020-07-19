@@ -25,7 +25,7 @@ export default class HomePage extends Component {
         <Footer size="mini">
           <FooterSection>
               <div>
-                <p style={{ position: "fixed", bottom: "0" }}>
+                <p style={{ position: "relative", bottom: "0" }}>
                   Copyright © David Gabrielian 2020
                 </p>
               </div>

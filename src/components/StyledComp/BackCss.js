@@ -7,7 +7,7 @@ export const BackCss = styled.section`
   }
 
   #main .main-text {
-    margin: 40px 220px;
+    margin: 40px 180px;
     font-weight: 600;
     line-height: 1.5;
   }
