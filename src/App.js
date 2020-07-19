@@ -19,7 +19,7 @@ class App extends Component {
       <React.Fragment>
         <Navbar />
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/online-store" component={HomePage} />
           <Route path="/phones" component={Phone} />
           <Route path="/tablets" component={Tablet} />
           <Route path="/watches" component={Watch} />
