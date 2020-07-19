@@ -11,9 +11,9 @@ export default class NotFound extends Component {
             <h1>error</h1>
             <br />
             <h2>poage not found</h2>
-            <br/>
-            <br/>
-            <br/>
+            <br />
+            <br />
+            <br />
             <h3>
               the requested URL
               <span className="text-danger">
