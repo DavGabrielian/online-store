@@ -22,15 +22,27 @@ export default class HomePage extends Component {
             <img className="home" alt="home" src={home} />
           </section>
         </BackCss>
+        <div>
         <Footer size="mini">
           <FooterSection>
               <div>
+                <a
+                  style={{ fontSize: "27px" }}
+                  href="https://github.com/DavGabrielian/online-store"
+                >
+                  VIEW CODE HERE
+                  <i
+                    class="fa fa-fw fa-github"
+                    style={{ fontSize: "35px" }}
+                  ></i>
+                </a>
                 <p style={{ position: "relative", bottom: "0" }}>
                   Copyright © David Gabrielian 2020
                 </p>
               </div>
           </FooterSection>
         </Footer>
+        </div>
       </React.Fragment>
     );
   }
